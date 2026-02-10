@@ -1,0 +1,122 @@
+/* ===== CONTACT FORM ===== */
+
+/* ===== INPUT ===== */
+.glass-input {
+  position: relative;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.95);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.glass-input:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Wrapper per l'input */
+.glass-input-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.glass-input-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1), transparent 40%);
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.glass-input-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.3) 50%, transparent 80%);
+  border-radius: 12px;
+  pointer-events: none;
+  transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  opacity: 0;
+  z-index: 1;
+}
+
+.glass-input-wrapper:focus-within::after {
+  animation: shine 1.5s ease-out;
+  opacity: 1;
+}
+
+.glass-input-wrapper .glass-input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* ===== TEXTAREA ===== */
+.glass-textarea {
+  resize: none;
+  min-height: 150px;
+}
+
+/* ===== LABEL ===== */
+.glass-label {
+  color: var(--glass-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* ===== ERROR MESSAGE ===== */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.glass-input.error {
+  border-color: #ff6b6b;
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.success-message {
+  position: relative;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #4caf50;
+  text-align: center;
+  display: none;
+  margin-top: 1rem;
+}
+
+.success-message.show {
+  display: block;
+}

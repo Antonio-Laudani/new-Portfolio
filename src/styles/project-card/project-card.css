@@ -1,0 +1,108 @@
+/* ===== PROJECT CARD ===== */
+.glass-project-card {
+  position: relative;
+  max-width: 100%;
+  padding: 1.8rem 2rem;
+  border-radius: 22px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  color: var(--glass-text);
+}
+
+.glass-project-card:hover {
+  transform: translateY(-8px);
+}
+
+.glass-project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--glass-refraction);
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.glass-project-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--glass-shine);
+  pointer-events: none;
+  transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  opacity: 0;
+}
+
+.glass-project-card:hover::after {
+  animation: shine 1.5s ease-out;
+  opacity: 1;
+}
+
+.project-tag {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.glass-project-card h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.glass-project-card p {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.project-tech {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.project-tech span {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+}
+@media (min-width: 1024px) {
+  .glass-project-card:hover {
+  transform: translateY(-8px);
+   box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4), 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+    inset 0 -120px 80px -40px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, var(--glass-bg), rgba(0, 0, 0, 0.3));
+  color: var(--glass-text)
+}
+.glass-project-card{
+  color:var(--dark-text);
+}
+}

@@ -1,0 +1,68 @@
+/* ===== NAVBAR ===== */
+.glass-nav {
+  position: fixed-top;
+  overflow: visible;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--glass-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.glass-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1), transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.nav-brand {
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Menu mobile sotto la navbar */
+@media (max-width: 768px) {
+  #mobileMenu {
+    height: 100vh;
+    margin-top: 60px;
+    background: rgba(9, 9, 51, 0.80);
+    backdrop-filter: blur(80px) saturate(170%);
+    -webkit-backdrop-filter: blur(80px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    z-index: 3;
+    border:none;
+  }
+}

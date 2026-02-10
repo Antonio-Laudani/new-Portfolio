@@ -1,0 +1,22 @@
+@import './styles/variables/variables.css';
+@import './styles/lavabg/lavalamp.css';
+@import './styles/navbar/navbar.css';
+@import './styles/hero-section/hero-section.css';
+@import './styles/glass-container/glass-container.css';
+@import './styles/project-card/project-card.css';
+@import './styles/buttons/buttons.css';
+@import './styles/contact-form/contact-form.css';
+/* 1️⃣ Import di Tailwind */
+@import "tailwindcss";
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+  background: var(--bg-dark);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}

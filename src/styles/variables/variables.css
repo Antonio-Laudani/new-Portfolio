@@ -1,0 +1,16 @@
+/*PALETTE LINK: https://www.figma.com/color-palettes/lavender-lilt/*/
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  --glass-text: rgba(255, 255, 255, 0.95);
+  --glass-text-soft: rgba(255, 255, 255, 0.75);
+  --glass-blur: blur(6px) saturate(150%);
+  --glass-blur-strong: blur(20px) saturate(180%) contrast(120%);
+  --bg-dark: #090933;
+  --dark-text: #090933;
+  --glass-refraction: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), transparent 50%);
+  --glass-shine: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.3) 50%, transparent 80%);
+}

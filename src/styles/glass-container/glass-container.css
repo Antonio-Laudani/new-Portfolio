@@ -61,3 +61,13 @@
 .glass-badge span {
   color: var(--glass-text) !important;
 }
+
+/* Mobile: rimuovi glass */
+@media (max-width: 768px) {
+  .glass-base {
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

@@ -24,14 +24,14 @@ const AboutSection = () => {
       </section>
 
       {/* Soft Skills & Interests Section */}
-      <div className="md:glass-base grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 p-6">
-        <h3 className="text-center text-white uppercase text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl col-span-1 sm:col-span-2 lg:col-span-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 p-6">
+        <h3 className="text-center text-white font-bold uppercase text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl col-span-1 sm:col-span-2 lg:col-span-4">
           Soft Skills
         </h3>
         
         {softSkills.map((skill, index) => (
           <div key={index} className="glass-badge h-40 w-full flex flex-col items-center justify-center p-6 gap-4">
-            <iconify-icon icon={skill.icon} style={{ fontSize: '80px', color: skill.color }}></iconify-icon>
+            <iconify-icon icon={skill.icon} style={{ fontSize: '80px', color: 'var(--glass-text)'}}></iconify-icon>
             <span className="font-medium text-lg text-center">{skill.name}</span>
           </div>
         ))}
@@ -42,7 +42,7 @@ const AboutSection = () => {
         
         {interests.map((interest, index) => (
           <div key={index} className="glass-badge h-40 w-full flex flex-col items-center justify-center p-6 gap-4">
-            <iconify-icon icon={interest.icon} style={{ fontSize: '80px', color: interest.color }}></iconify-icon>
+            <iconify-icon icon={interest.icon} style={{ fontSize: '80px', color: 'var(--glass-text)' }}></iconify-icon>
             <span className="font-medium text-lg text-center">{interest.name}</span>
           </div>
         ))}

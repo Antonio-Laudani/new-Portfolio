@@ -6,7 +6,7 @@ const AboutSection = () => {
   return (
     <>
       {/* Technologies Section */}
-      <section id="About" className="w-full bg-[#090933] py-12 px-4 md:px-8">
+      <section id="About" className="w-full bg-[#090933] py-12 px-4 md:px-8 style={{ contentVisibility: 'auto' }}">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <h3 className="mt-5 text-white text-center font-bold uppercase text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl col-span-1 sm:col-span-2 lg:col-span-4">
             Technologies

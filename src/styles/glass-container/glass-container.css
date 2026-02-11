@@ -62,12 +62,18 @@
   color: var(--glass-text) !important;
 }
 
-/* Mobile: rimuovi glass */
 @media (max-width: 768px) {
   .glass-base {
     background: none;
     border: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .glass-base::before,
+  .glass-base::after {
+    background: none;
+    opacity: 0;
   }
 }

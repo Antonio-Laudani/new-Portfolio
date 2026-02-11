@@ -36,7 +36,7 @@ const AboutSection = () => {
           </div>
         ))}
 
-        <h3 className="text-center text-white font-bold uppercase text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl col-span-1 sm:col-span-2 lg:col-span-4">
+        <h3 className="text-center text-white font-bold uppercase text-base sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl col-span-1 sm:col-span-2 lg:col-span-4">
           Interests
         </h3>
         

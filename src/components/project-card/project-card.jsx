@@ -1,18 +1,17 @@
 import '../../styles/project-card/project-card.css';
 
-const ProjectCard = ({ tag, title, description, detailedDescription, tech, link }) => {
+const ProjectCard = ({ tag, title, detailedDescription, tech, link }) => {
   return (
     <div className="glass-project-card group mt-20 flex flex-col font-semibold ">
       <div className="project-tag w-fit">{tag}</div>
       <h3>{title}</h3>
-      <p className="text-sm mb-4 hidden lg:block ">{description}</p>
       
-      <div className="
+      <div /*className="
   transform transition-all duration-300
   opacity-100 translate-y-0
   lg:opacity-0 lg:translate-y-8
   lg:group-hover:opacity-100 lg:group-hover:translate-y-0
-">
+"*/>
 
         <p className="text-sm mb-4">
           {detailedDescription}
@@ -24,12 +23,7 @@ const ProjectCard = ({ tag, title, description, detailedDescription, tech, link 
   target="_blank"
   rel="noopener noreferrer"
   className="
-    glass-button group relative inline-flex items-center overflow-hidden
-    opacity-100 translate-y-0
-    transition-all duration-300
-    lg:opacity-0 lg:translate-y-4
-    lg:group-hover:opacity-100 lg:group-hover:translate-y-0 
-  "
+    glass-button group relative inline-flex items-center overflow-hidden"
 >
 
             <span className="absolute -left-full flex items-center transition-all duration-300 group-hover:left-4">

@@ -1,22 +1,35 @@
+import { useState } from "react";
 import '../../styles/project-card/project-card.css';
 
 const ProjectCard = ({ tag, title, detailedDescription, tech, link }) => {
+   const [expanded, setExpanded] = useState(false);
+
+  const wordLimit = 11;
+
+  const words = detailedDescription.split(" ");
+  const isLong = words.length > wordLimit;
+
+  const shortText = words.slice(0, wordLimit).join(" ");
   return (
     <div className="glass-project-card group mt-20 flex flex-col font-semibold ">
       <div className="project-tag w-fit">{tag}</div>
       <h3>{title}</h3>
       
-      <div /*className="
-  transform transition-all duration-300
-  opacity-100 translate-y-0
-  lg:opacity-0 lg:translate-y-8
-  lg:group-hover:opacity-100 lg:group-hover:translate-y-0
-"*/>
+      <div>
 
-        <p className="text-sm mb-4">
-          {detailedDescription}
+        <p className="text-sm mb-2">
+          {expanded||!isLong ? detailedDescription : `${shortText}...`}
         </p>
 
+           {isLong && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="text-xs underline opacity-70 hover:opacity-100 mb-4"
+          >
+            {expanded ? "Show less" : "Read more"}
+          </button>
+        )} 
+        </div>
         <div className="m-4 flex justify-end">
          <a
   href={link}
@@ -48,7 +61,7 @@ const ProjectCard = ({ tag, title, detailedDescription, tech, link }) => {
             </span>
           </a>
         </div>
-      </div>
+      
       
       <div className="project-tech mt-auto">
         {tech.map((techName, index) => (

@@ -12,7 +12,7 @@ const ContactSection = () => {
           Contattami
         </h2>
 
-        <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+        <form onSubmit={handleSubmit} className="relative z-10 space-y-6 font-semibold">
           
           {/* Nome */}
           <div>

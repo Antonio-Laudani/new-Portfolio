@@ -182,10 +182,7 @@
 
 /* ===== MOBILE LAVA LAMP ===== */
 @media (max-width: 768px) {
-  /* Nascondi blobs desktop */
-  .blob1, .blob2, .blob3, .blob4, .blob5, .blob6, .blob7 {
-    display: none;
-  }
+
   
   /* Mostra bolle mobili */
   .bubble-mobile {
@@ -215,7 +212,7 @@
     height: 120px;
     left: 40%;
     bottom: -80px;
-    animation: bubbleRise1 12s ease-in-out 3s infinite, bubbleMorph1 4s ease-in-out infinite;
+    animation: bubbleRise1 12s ease-in-out 3s infinite, motherMorph 4s ease-in-out infinite;
   }
   
   /* Bolla 2 */
@@ -224,7 +221,7 @@
     height: 110px;
     left: 50%;
     bottom: -80px;
-    animation: bubbleRise2 13s ease-in-out 7s infinite, bubbleMorph2 5s ease-in-out infinite;
+    animation: bubbleRise2 13s ease-in-out 10s infinite, motherMorph 5s ease-in-out infinite;
   }
   
   /* Bolla 3 */
@@ -233,7 +230,7 @@
     height: 115px;
     left: 60%;
     bottom: -80px;
-    animation: bubbleRise3 14s ease-in-out 11s infinite, bubbleMorph3 6s ease-in-out infinite;
+    animation: bubbleRise3 14s ease-in-out 18s infinite, motherMorph 6s ease-in-out infinite;
   }
 }
 

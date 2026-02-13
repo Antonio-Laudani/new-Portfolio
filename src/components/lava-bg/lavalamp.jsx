@@ -16,23 +16,47 @@ const LavaLamp = () => {
 
   return (
     <>
-      {/* SVG Filter - SEMPRE presente per Safari */}
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
+      {/* SVG Filter - MODIFICATO per Safari */}
+      <svg
+        width="1"
+        height="1"
+        style={{
+          position: 'absolute',
+          opacity: 0,
+          pointerEvents: 'none',
+        }}
+      >
         <defs>
-          <filter id="metaball">
+          <filter
+            id="metaball"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
             <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
-            <feColorMatrix in="blur" mode="matrix"
-              values="
-                1 0 0 0 0
-                0 1 0 0 0
-                0 0 1 0 0
-                0 0 0 22 -8" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 22 -8"
+            />
           </filter>
         </defs>
       </svg>
 
-      {/* Lava Container */}
-      <div className="lava-container" style={{ WebkitFilter: 'url(#metaball)', filter: 'url(#metaball)' }}>
+      {/* Lava Container - con will-change e trasformazione 3D per aiutare Safari */}
+      <div
+        className="lava-container"
+        style={{
+          WebkitFilter: 'url(#metaball)',
+          filter: 'url(#metaball)',
+          willChange: 'transform, filter', // Suggerisce a Safari di ottimizzare
+          transform: 'translateZ(0)',       // Forza accelerazione hardware
+        }}
+      >
         {!isMobile ? (
           /* Desktop blobs */
           <>
@@ -45,8 +69,9 @@ const LavaLamp = () => {
             <div className="blob blob7"></div>
           </>
         ) : (
-          /* Mobile bubbles */
+          /* Mobile bubbles - ora la bolla madre è un div esplicito, non uno pseudo-elemento */
           <>
+            <div className="mother-bubble"></div>
             <div className="bubble-mobile bubble-1"></div>
             <div className="bubble-mobile bubble-2"></div>
             <div className="bubble-mobile bubble-3"></div>

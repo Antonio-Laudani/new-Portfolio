@@ -4,39 +4,35 @@ const LavaLamp = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
     checkMobile();
     window.addEventListener('resize', checkMobile);
+    
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
     <>
-      {/* SVG Filter - sempre presente */}
+      {/* SVG Filter */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <defs>
-          <filter id="metaball">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur" />
-            <feColorMatrix in="blur" type="matrix"
-              values="
-                1 0 0 0 0
-                0 1 0 0 0
-                0 0 1 0 0
-                0 0 0 30 -10" />
-          </filter>
-        </defs>
+        <filter id="metaball">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
+          <feColorMatrix in="blur" mode="matrix"
+            values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 22 -8" />
+        </filter>
       </svg>
 
-      {/* Lava Container - unico filtro per tutte le bolle */}
-      <div
-        className="lava-container"
-        style={{
-          WebkitFilter: 'url(#metaball)',
-          filter: 'url(#metaball)',
-          transform: 'translate3d(0,0,0)', // forza Safari
-        }}
-      >
+      {/* Lava Container */}
+      <div className="lava-container">
         {!isMobile ? (
+          /* Desktop blobs */
           <>
             <div className="blob blob1"></div>
             <div className="blob blob2"></div>
@@ -47,6 +43,7 @@ const LavaLamp = () => {
             <div className="blob blob7"></div>
           </>
         ) : (
+          /* Mobile bubbles */
           <>
             <div className="bubble-mobile bubble-1"></div>
             <div className="bubble-mobile bubble-2"></div>

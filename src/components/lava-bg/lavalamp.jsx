@@ -16,21 +16,23 @@ const LavaLamp = () => {
 
   return (
     <>
-      {/* SVG Filter */}
+      {/* SVG Filter - SEMPRE presente per Safari */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <filter id="metaball">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
-          <feColorMatrix in="blur" mode="matrix"
-            values="
-              1 0 0 0 0
-              0 1 0 0 0
-              0 0 1 0 0
-              0 0 0 22 -8" />
-        </filter>
+        <defs>
+          <filter id="metaball">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
+            <feColorMatrix in="blur" mode="matrix"
+              values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 22 -8" />
+          </filter>
+        </defs>
       </svg>
 
       {/* Lava Container */}
-      <div className="lava-container">
+      <div className="lava-container" style={{ WebkitFilter: 'url(#metaball)', filter: 'url(#metaball)' }}>
         {!isMobile ? (
           /* Desktop blobs */
           <>

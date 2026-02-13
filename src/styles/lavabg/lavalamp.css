@@ -6,8 +6,6 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  filter: url(#metaball);
-  -webkit-filter: url(#metaball);
   z-index: -1;
 }
 

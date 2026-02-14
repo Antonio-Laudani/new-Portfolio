@@ -15,7 +15,7 @@ const LavaLamp = () => {
   }, []);
 
   return (
-    <div className="lava-container">
+    <div className="lava-container" style={{ filter: 'url(#metaball)' }}>
       {!isMobile ? (
         <>
           <div className="blob blob1"></div>

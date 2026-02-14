@@ -253,3 +253,12 @@
   90% { opacity: 0.8; }
   100% { bottom: 120vh; left: 62%; opacity: 0; scale: 0.4; }
 }
+
+/* Nascondi completamente lava lamp su Safari */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    .lava-container {
+      display: none !important;
+    }
+  }
+}

@@ -16,18 +16,18 @@ const LavaLamp = () => {
 
   return (
     <>
-      {/* SVG Filter */}
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <filter id="metaball">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
-          <feColorMatrix in="blur" mode="matrix"
-            values="
-              1 0 0 0 0
-              0 1 0 0 0
-              0 0 1 0 0
-              0 0 0 22 -8" />
-        </filter>
-      </svg>
+      {/* SVG Filter 
+    Aggiungi questo nel tuo HTML */}
+<svg style="display: none;">
+  <defs>
+    <filter id="metaball">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
 
       {/* Lava Container */}
       <div className="lava-container">

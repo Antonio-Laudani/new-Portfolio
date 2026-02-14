@@ -8,11 +8,20 @@
   overflow: hidden;
   filter: url(#metaball);
   z-index: -1;
+  /* Safari fix per filtri SVG */
+  -webkit-filter: url(#metaball);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .blob {
   position: absolute;
   will-change: transform, border-radius, opacity;
+  /* Safari fix */
+    -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
 /* Desktop blobs */

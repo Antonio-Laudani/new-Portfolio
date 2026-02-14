@@ -16,37 +16,38 @@ const LavaLamp = () => {
 
   return (
     <>
-      {/* SVG Filter per metaball effect */}
-      <svg style={{ display: 'none' }} role="presentation" aria-hidden="true">
-        <defs>
-          <filter id="metaball">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-            <feComponentTransfer>
-              <feFuncA type="discrete" tableValues="0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" />
-            </feComponentTransfer>
-          </filter>
-        </defs>
+      {/* SVG Filter */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <filter id="metaball">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
+          <feColorMatrix in="blur" mode="matrix"
+            values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 22 -8" />
+        </filter>
       </svg>
 
       {/* Lava Container */}
       <div className="lava-container">
         {!isMobile ? (
-          // Desktop blobs
+          /* Desktop blobs */
           <>
-            <div className="blob blob1" />
-            <div className="blob blob2" />
-            <div className="blob blob3" />
-            <div className="blob blob4" />
-            <div className="blob blob5" />
-            <div className="blob blob6" />
-            <div className="blob blob7" />
+            <div className="blob blob1"></div>
+            <div className="blob blob2"></div>
+            <div className="blob blob3"></div>
+            <div className="blob blob4"></div>
+            <div className="blob blob5"></div>
+            <div className="blob blob6"></div>
+            <div className="blob blob7"></div>
           </>
         ) : (
-          // Mobile bubbles
+          /* Mobile bubbles */
           <>
-            <div className="bubble-mobile bubble-1" />
-            <div className="bubble-mobile bubble-2" />
-            <div className="bubble-mobile bubble-3" />
+            <div className="bubble-mobile bubble-1"></div>
+            <div className="bubble-mobile bubble-2"></div>
+            <div className="bubble-mobile bubble-3"></div>
           </>
         )}
       </div>

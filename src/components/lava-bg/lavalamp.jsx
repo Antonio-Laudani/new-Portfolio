@@ -30,10 +30,8 @@ const LavaLamp = () => {
             <feColorMatrix 
               in="blur" 
               mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -8" 
-              result="goo"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -8"
             />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
           </filter>
         </defs>
       </svg>

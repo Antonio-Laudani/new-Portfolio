@@ -255,15 +255,24 @@
 
 /* BG SAFARI */
 @supports (-webkit-hyphens:none) {
-  body {
-    background: linear-gradient(135deg, #090933 0%, #575799 70%, #9D9DCC 100%) !important;
-    color: rgba(255, 255, 255, 0.9);
+  .lava-container {
+    display: none !important;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #090933 0%, #575799 70%, #9D9DCC 100%);
+    z-index: -2;
   }
 
-  /* Responsivo: cambia direzione gradient su mobile */
   @media (max-width: 768px) {
-    body {
-      background: linear-gradient(180deg, #090933 0%, #575799 60%, #9D9DCC 100%) !important;
+    body::before {
+      background: linear-gradient(180deg, #090933 0%, #575799 60%, #9D9DCC 100%);
     }
   }
 }

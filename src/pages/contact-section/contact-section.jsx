@@ -3,7 +3,7 @@ import '../../styles/contact-form/contact-form.css';
 import '../../styles/glass-container/glass-container.css';
 
 const ContactSection = () => {
-  const { formData, errors, showSuccess, handleChange, handleSubmit } = useContactForm();
+  const { formData, errors, showSuccess, isSubmitting, handleChange, handleSubmit } = useContactForm();
 
   return (
     <section id="contact" className="w-full max-w-2xl mx-auto rounded-2xl mt-10 pt-10">
@@ -26,6 +26,7 @@ const ContactSection = () => {
                 placeholder="Il tuo nome"
                 value={formData.name}
                 onChange={handleChange}
+                disabled={isSubmitting}
                 required
               />
             </div>
@@ -46,6 +47,7 @@ const ContactSection = () => {
                 placeholder="la-tua-email@esempio.com"
                 value={formData.email}
                 onChange={handleChange}
+                disabled={isSubmitting}
                 required
               />
             </div>
@@ -66,6 +68,7 @@ const ContactSection = () => {
                 placeholder="Oggetto del messaggio"
                 value={formData.subject}
                 onChange={handleChange}
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -81,6 +84,7 @@ const ContactSection = () => {
                 placeholder="Scrivi il tuo messaggio qui..."
                 value={formData.message}
                 onChange={handleChange}
+                disabled={isSubmitting}
                 required
               ></textarea>
             </div>
@@ -91,8 +95,12 @@ const ContactSection = () => {
 
           {/* Button */}
           <div className="flex justify-center pt-4">
-            <button type="submit" className="glass-button">
-              Invia Messaggio
+            <button 
+              type="submit" 
+              className="glass-button" 
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Invio in corso...' : 'Invia Messaggio'}
             </button>
           </div>
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export const useContactForm = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ export const useContactForm = () => {
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email) => {
     return email.includes('@') && email.trim().length > 0;
@@ -43,7 +45,7 @@ export const useContactForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let isValid = true;
@@ -70,21 +72,42 @@ export const useContactForm = () => {
     setErrors(newErrors);
 
     if (isValid) {
-      // TODO: Integrare EmailJS qui
-      console.log('Form submitted:', formData);
-      
-      setShowSuccess(true);
-      
-      // Reset del form dopo 2 secondi
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setShowSuccess(false);
-      }, 2000);
+      setIsSubmitting(true);
+
+      try {
+        // Invia email tramite EmailJS
+        await emailjs.send(
+          'service_10y38ln',     // Sostituisci con il tuo Service ID
+          'template_0xwh5a5',    // Sostituisci con il tuo Template ID
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject || 'Nessun oggetto',
+            message: formData.message
+          },
+          'f4b52kD9UEoBilrAq'      // Sostituisci con la tua Public Key
+        );
+
+        console.log('Email inviata con successo!');
+        setShowSuccess(true);
+
+        // Reset del form dopo 2 secondi
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+          setShowSuccess(false);
+        }, 2000);
+
+      } catch (error) {
+        console.error('Errore invio email:', error);
+        alert('Errore durante l\'invio del messaggio. Riprova più tardi.');
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -92,6 +115,7 @@ export const useContactForm = () => {
     formData,
     errors,
     showSuccess,
+    isSubmitting,
     handleChange,
     handleSubmit
   };

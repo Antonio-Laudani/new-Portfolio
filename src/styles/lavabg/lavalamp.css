@@ -254,16 +254,16 @@
 }
 
 /* BG SAFARI */
-@supports (-webkit-hyphens:none) and (not (overflow:-webkit-marquee)) and (not (-ms-ime-align:auto)) {
- body {
-    background: linear-gradient(135deg, #090933 0%, #575799 70%, #9D9DCC 100%);
+@supports (-webkit-hyphens:none) {
+  body {
+    background: linear-gradient(135deg, #090933 0%, #575799 70%, #9D9DCC 100%) !important;
     color: rgba(255, 255, 255, 0.9);
   }
 
   /* Responsivo: cambia direzione gradient su mobile */
   @media (max-width: 768px) {
     body {
-      background: linear-gradient(180deg, #090933 0%, #575799 60%, #9D9DCC 100%);
+      background: linear-gradient(180deg, #090933 0%, #575799 60%, #9D9DCC 100%) !important;
     }
   }
 }

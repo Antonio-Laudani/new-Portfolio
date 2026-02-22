@@ -9,21 +9,21 @@ const ContactSection = () => {
     <section id="contact" className="w-full max-w-2xl mx-auto rounded-2xl mt-10 pt-10">
       <div className="glass-base rounded-2xl p-4 mt-7">
         <h2 className="text-white text-center font-bold uppercase text-2xl md:text-3xl lg:text-4xl mb-8 relative z-3">
-          Contattami
+          Contact Me
         </h2>
 
         <form onSubmit={handleSubmit} className="relative z-10 space-y-6 font-semibold">
           
           {/* Nome */}
           <div>
-            <label htmlFor="name" className="glass-label">Nome *</label>
+            <label htmlFor="name" className="glass-label">Name *</label>
             <div className="glass-input-wrapper">
               <input 
                 type="text" 
                 id="name" 
                 name="name" 
                 className={`glass-input ${errors.name ? 'error' : ''}`}
-                placeholder="Il tuo nome"
+                placeholder="Your name"
                 value={formData.name}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -31,7 +31,7 @@ const ContactSection = () => {
               />
             </div>
             <p className={`error-message ${errors.name ? 'show' : ''}`}>
-              Il nome è obbligatorio
+              Name is required
             </p>
           </div>
 
@@ -44,7 +44,7 @@ const ContactSection = () => {
                 id="email" 
                 name="email" 
                 className={`glass-input ${errors.email ? 'error' : ''}`}
-                placeholder="la-tua-email@esempio.com"
+                placeholder="your-email@example.com"
                 value={formData.email}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -52,13 +52,13 @@ const ContactSection = () => {
               />
             </div>
             <p className={`error-message ${errors.email ? 'show' : ''}`}>
-              Inserisci un'email valida con @
+              Please enter a valid email address with @
             </p>
           </div>
 
           {/* Oggetto */}
           <div>
-            <label htmlFor="subject" className="glass-label">Oggetto</label>
+            <label htmlFor="subject" className="glass-label">Subject</label>
             <div className="glass-input-wrapper">
               <input 
                 type="text" 
@@ -75,13 +75,13 @@ const ContactSection = () => {
 
           {/* Messaggio */}
           <div>
-            <label htmlFor="message" className="glass-label">Messaggio *</label>
+            <label htmlFor="message" className="glass-label">Message *</label>
             <div className="glass-input-wrapper">
               <textarea 
                 id="message" 
                 name="message" 
                 className={`glass-input glass-textarea ${errors.message ? 'error' : ''}`}
-                placeholder="Scrivi il tuo messaggio qui..."
+                placeholder="Write your message here..."
                 value={formData.message}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -89,7 +89,7 @@ const ContactSection = () => {
               ></textarea>
             </div>
             <p className={`error-message ${errors.message ? 'show' : ''}`}>
-              Il messaggio è obbligatorio
+              Message is required
             </p>
           </div>
 
@@ -100,13 +100,13 @@ const ContactSection = () => {
               className="glass-button" 
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Invio in corso...' : 'Invia Messaggio'}
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
 
           {/* Success Message */}
           <div className={`success-message ${showSuccess ? 'show' : ''}`}>
-            ✓ Messaggio inviato con successo!
+            ✓ Message sent successfully!
           </div>
 
         </form>

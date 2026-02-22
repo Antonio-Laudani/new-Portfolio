@@ -4,7 +4,7 @@ import '../../styles/project-card/project-card.css';
 const ProjectCard = ({ tag, title, detailedDescription, tech, link }) => {
    const [expanded, setExpanded] = useState(false);
 
-  const wordLimit = 11;
+  const wordLimit = 15;
 
   const words = detailedDescription.split(" ");
   const isLong = words.length > wordLimit;

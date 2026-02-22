@@ -4,7 +4,6 @@
   overflow: visible;
   width: 100%;
   padding: 1rem 1.5rem;
-  border-radius: 16px;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);

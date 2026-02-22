@@ -90,8 +90,3 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 0.8rem;
 }
-@media (min-width: 1024px){
-  .glass-project-card{
-    blur : 0.8 px;
-  }
-}

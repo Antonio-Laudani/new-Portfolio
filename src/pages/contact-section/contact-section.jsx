@@ -1,9 +1,26 @@
 import { useContactForm } from '../../hooks/contactForm/contactForm';
 import '../../styles/contact-form/contact-form.css';
 import '../../styles/glass-container/glass-container.css';
+import { useState } from 'react';
 
 const ContactSection = () => {
-  const { formData, errors, showSuccess, isSubmitting, handleChange, handleSubmit } = useContactForm();
+  const { formData, errors, showSuccess, isSubmitting, handleChange, handleSubmit: hookSubmit } = useContactForm();
+  const [consent, setConsent] = useState(false); // ✅ GDPR consent
+  const [gdprError, setGdprError] = useState(false);
+
+  // wrapper handleSubmit per bloccare invio senza consenso
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  if (!consent) {
+    setGdprError(true);
+
+    setTimeout(() => setGdprError(false), 2500);
+    return;
+  }
+
+  hookSubmit(e);
+};
 
   return (
     <section id="contact" className="w-full max-w-2xl mx-auto rounded-2xl mt-10 pt-10">
@@ -30,9 +47,7 @@ const ContactSection = () => {
                 required
               />
             </div>
-            <p className={`error-message ${errors.name ? 'show' : ''}`}>
-              Name is required
-            </p>
+            <p className={`error-message ${errors.name ? 'show' : ''}`}>Name is required</p>
           </div>
 
           {/* Email */}
@@ -51,9 +66,7 @@ const ContactSection = () => {
                 required
               />
             </div>
-            <p className={`error-message ${errors.email ? 'show' : ''}`}>
-              Please enter a valid email address with @
-            </p>
+            <p className={`error-message ${errors.email ? 'show' : ''}`}>Please enter a valid email address with @</p>
           </div>
 
           {/* Oggetto */}
@@ -88,16 +101,47 @@ const ContactSection = () => {
                 required
               ></textarea>
             </div>
-            <p className={`error-message ${errors.message ? 'show' : ''}`}>
-              Message is required
-            </p>
+            <p className={`error-message ${errors.message ? 'show' : ''}`}>Message is required</p>
           </div>
+
+
+          {/* GDPR CHECKBOX */}
+<div>
+  <div className="flex items-start gap-2 text-sm text-white">
+    <input
+      id='privacy'
+      type="checkbox"
+      name="privacy"
+      checked={consent}
+      onChange={(e) => setConsent(e.target.checked)}
+      className="mt-1 accent-white"
+    />
+    <label htmlFor="privacy" className="cursor-pointer select-none">
+      Accetto la{" "}
+      <a
+        href="https://www.iubenda.com/privacy-policy/23324822"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline"
+      >
+        Privacy Policy
+      </a>
+    </label>
+  </div>
+  {gdprError && (
+    <p className="text-red-400 text-sm mt-2">
+      You must accept the Privacy Policy to send the message.
+    </p>
+  )}
+</div>
+
+          
 
           {/* Button */}
           <div className="flex justify-center pt-4">
             <button 
               type="submit" 
-              className="glass-button" 
+              className="glass-button"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}

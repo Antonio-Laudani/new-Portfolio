@@ -7,7 +7,7 @@ export default function Footer() {
         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       </aside>
 
-            <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+            <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end pr-7">
         <a
           href="https://www.linkedin.com/in/antonio-laudani-25aa3a229/"
           target="_blank"

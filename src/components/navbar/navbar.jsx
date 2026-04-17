@@ -6,10 +6,15 @@ const Navbar = () => {
 
   return (
     <nav className="glass-nav fixed top-0 left-0 right-0 w-full px-4 py-4 md:px-10 flex items-center justify-between z-50">
-      <span className="nav-brand relative z-10">
-       <img src="/new-portfolio-logoV2.png" alt="Logo" className="w-10 h-10" a href="#Hero"/>
-      </span>
-      
+      {/* Brand */}
+     <a href="#Hero" className="nav-brand relative z-10">
+      {/** 
+  <img
+    src="/new-portfolio-logoV2.png"
+    alt="Logo"
+    className="w-10 h-10 object-contain"
+  />*/}
+</a>
       {/* Desktop Links */}
       <div className="nav-links hidden md:flex gap-8 text-sm md:text-base relative z-1">
         <a href="#work" className="hover:opacity-70 transition">Work</a>

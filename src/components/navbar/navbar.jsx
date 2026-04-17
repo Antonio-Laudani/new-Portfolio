@@ -8,12 +8,12 @@ const Navbar = () => {
     <nav className="glass-nav fixed top-0 left-0 right-0 w-full px-4 py-4 md:px-10 flex items-center justify-between z-50">
       {/* Brand */}
      <a href="#Hero" className="nav-brand relative z-10">
-      {/** */}
+      {/** 
   <img
     src="/new-portfolio-logoV2.png"
     alt="Logo"
     className="w-10 h-10 object-contain"
-  />
+  />*/}
   <link rel="preload" as="image" href="/new-portfolio-logoV2.png" />
 </a>
       {/* Desktop Links */}

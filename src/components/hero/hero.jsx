@@ -3,7 +3,7 @@ import '../../styles/hero-section/hero-section.css';
 const Hero = () => {
   return (
     <div className="hero-wrapper">
-      <div className="group relative block apple-glass flex flex-col items-center justify-center mt-20 ">
+      <div className="group relative apple-glass flex flex-col items-center justify-center mt-20 ">
         <h1 className="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-in-expand">
           Antonio Laudani
         </h1>

@@ -6,8 +6,8 @@ const Navbar = () => {
 
   return (
     <nav className="glass-nav fixed top-0 left-0 right-0 w-full px-4 py-4 md:px-10 flex items-center justify-between z-50">
-      <span className="nav-brand text-lg font-semibold relative z-10">
-        Portfolio
+      <span className="nav-brand relative z-10">
+       <img src="/new-portfolio-logoV2.png" alt="Logo" className="w-10 h-10" />
       </span>
       
       {/* Desktop Links */}

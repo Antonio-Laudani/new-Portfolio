@@ -10,7 +10,7 @@ const Navbar = () => {
   <img
     src="/new-portfolio-logoV2.png"
     alt="Logo"
-    className="w-10 h-10"
+    className="w-10 h-10 object-contain"
   />
 </a>
       {/* Desktop Links */}

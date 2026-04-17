@@ -16,7 +16,6 @@ const Navbar = () => {
   height={40}
     className="w-10 h-10 object-contain"
   />
-  <link rel="preload" as="image" href="/new-portfolio-logoV2.png" />
 </a>
       {/* Desktop Links */}
       <div className="nav-links hidden md:flex gap-8 text-sm md:text-base relative z-1">

@@ -9,6 +9,13 @@ export const projects = [
   },
   {
     tag: "New",
+    title: "Clinical Psychologist Website",
+    detailedDescription:" This is a website for a clinical psychologist, designed to provide information about the psychologist's services, background, and contact details. The website features a clean and professional design, with a focus on user experience and accessibility.",
+    tech: ["React", "Vite", "TailwindCSS"],
+    link: "https://davidepatane-psicologo.netlify.app/"
+  },
+  {
+    tag: "Project",
     title: "Veggie recipes",
     detailedDescription: "Web application built with React to explore and browse vegetarian recipes, featuring a modern interface, dark mode support, Lexend font, and a high-contrast design for colorblind accessibility. The project is hosted on Netlify, with secure API key management through serverless functions.",
     tech: ["React", "Vite", "TailwindCSS"],
